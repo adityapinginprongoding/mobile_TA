@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:input_data/pages/SplasScren.dart';
+import 'package:input_data/pages/home.dart';
 import 'package:input_data/pages/loginpage.dart';
 
 void main() {
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplasScren(),
-      // home: loginpage(),
+      // home: SplasScren(),
+      home: loginpage(),
+      // home: home()
     );
   }
 }

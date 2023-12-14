@@ -9,7 +9,7 @@ Color bgsplas = Color(0xff00B4D8);
 Color bperubahan = Color(0xff0096C7);
 Color bmasuk = Color(0xff023E8A);
 
-TextStyle textfonth = GoogleFonts.montserrat(
+TextStyle texttextstyle = GoogleFonts.montserrat(
   color: hitam,
 );
 
@@ -22,3 +22,4 @@ FontWeight reguler = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semibold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
+
