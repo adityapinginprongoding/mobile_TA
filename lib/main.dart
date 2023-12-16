@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplasScren(),
-      home: loginpage(),
+      home: SplasScren(),
+      // home: loginpage(),
       // home: home()
     );
   }

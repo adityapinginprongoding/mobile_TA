@@ -8,6 +8,7 @@ Color isifrom = Color(0xff7F7F7F);
 Color bgsplas = Color(0xff00B4D8);
 Color bperubahan = Color(0xff0096C7);
 Color bmasuk = Color(0xff023E8A);
+Color logoutt = Color(0xffff0005);
 
 TextStyle texttextstyle = GoogleFonts.montserrat(
   color: hitam,
@@ -22,4 +23,3 @@ FontWeight reguler = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semibold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
-

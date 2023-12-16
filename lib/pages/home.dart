@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:input_data/pages/loginpage.dart';
 import 'package:input_data/theme.dart';
 
 class home extends StatelessWidget {
@@ -8,7 +9,8 @@ class home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
+        body: SingleChildScrollView(
+            child: Column(
           children: [
             Row(
               children: [
@@ -48,21 +50,22 @@ class home extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 10,
+                  width: 40,
                 ),
-                Container(
-                  padding: EdgeInsets.only(left: 20, top: 15),
-                  height: 70,
-                  child: Image.asset(
-                    'assets/logout.png',
-                    height: 50,
-                    width: 50,
-                  ),
+                TextButton.icon(
+                  onPressed: () {
+                    _showPopup(context);
+                    // Aksi yang akan dijalankan ketika tombol ditekan
+                    print('Tombol ditekan!');
+                  },
+                  icon: Image.asset(
+                      'assets/logout.png'), // Gantilah 'assets/icon.png' dengan path gambar Anda
+                  label: Text(''),
                 ),
               ],
             ),
             Container(
-              padding: EdgeInsets.only(top: 100, left: 50, right: 50),
+              padding: EdgeInsets.only(top: 50, left: 50, right: 50),
               child: RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -87,7 +90,7 @@ class home extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 180, left: 50, right: 50),
+              padding: EdgeInsets.only(top: 20, left: 40, right: 40),
               margin: EdgeInsets.only(top: 10, right: 10, left: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,10 +187,226 @@ class home extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: 300,
+                    height: 60,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(isitext),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40),
+                          )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => home()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/user.png',
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Data siswa',
+                              style: texttextstyle.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: reguler,
+                                  color: hitam),
+                            ),
+                          ],
+                        )),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: 300,
+                    height: 60,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(isitext),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40),
+                          )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => home()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/wali.png',
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Data Orangtua/Wali',
+                              style: texttextstyle.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: reguler,
+                                  color: hitam),
+                            ),
+                          ],
+                        )),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: 300,
+                    height: 60,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(isitext),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40),
+                          )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => home()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/datalainlain.png',
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Data Lain Lain',
+                              style: texttextstyle.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: reguler,
+                                  color: hitam),
+                            ),
+                          ],
+                        )),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 85),
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset('assets/shape.png'),
+                    width: double.infinity,
+                  )
+                ],
+              ),
             )
           ],
-        ),
+        )),
       ),
+    );
+  }
+
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Container(
+            padding: EdgeInsets.only(right: 40, left: 40),
+            child: Text(
+              'Anda yakin ingin Log Out?',
+              style: texttextstyle.copyWith(fontSize: 20, fontWeight: semibold),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          actions: [
+            Container(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: Row(
+                children: [
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(logoutt),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ))),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => loginpage()),
+                        );
+                      },
+                      child: Text('Ya, Log Out',
+                          style: texttextstyle.copyWith(
+                              fontSize: 20, fontWeight: semibold, color: putih)),
+                    ),
+                    SizedBox(width: 20,),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(bmasuk),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ))),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Tidak',
+                        style: texttextstyle.copyWith(
+                            fontSize: 20, fontWeight: semibold, color: putih)),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
