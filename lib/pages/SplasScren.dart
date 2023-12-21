@@ -17,7 +17,7 @@ class _SplasScrenState extends State<SplasScren> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => loginpage(),
       ));
