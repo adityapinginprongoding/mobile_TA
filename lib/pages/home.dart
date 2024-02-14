@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:input_data/from/from_data_siswa.dart';
+import 'package:input_data/from/from_perubahan_data_wali.dart';
 import 'package:input_data/pages/loginpage.dart';
+import 'package:input_data/pages/perubahan_data_lain_lain.dart';
 import 'package:input_data/theme.dart';
 
 class home extends StatelessWidget {
@@ -14,27 +17,27 @@ class home extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  height: 60,
-                  width: 225,
-                  padding: EdgeInsets.only(left: 20, top: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Achmad Mukhlis Khafidulloh',
-                        style: texttextstyle.copyWith(
-                            fontSize: 15, fontWeight: semibold),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'XI RPL 1',
-                        style: texttextstyle.copyWith(
-                            fontSize: 13, fontWeight: semibold),
-                      ),
-                    ],
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20, top: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Achmad Mukhlis Khafidulloh',
+                          style: texttextstyle.copyWith(
+                              fontSize: 15, fontWeight: semibold),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'XI RPL 1',
+                          style: texttextstyle.copyWith(
+                              fontSize: 13, fontWeight: semibold),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -210,7 +213,7 @@ class home extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => home()),
+                            MaterialPageRoute(builder: (context) =>FromDataSiswa()),
                           );
                         },
                         child: Row(
@@ -258,7 +261,7 @@ class home extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => home()),
+                            MaterialPageRoute(builder: (context) => FromPerubahanDataWali()),
                           );
                         },
                         child: Row(
@@ -306,7 +309,7 @@ class home extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => home()),
+                            MaterialPageRoute(builder: (context) => perubahan_data_lain_lain()),
                           );
                         },
                         child: Row(
@@ -386,7 +389,7 @@ class home extends StatelessWidget {
                           style: texttextstyle.copyWith(
                               fontSize: 20, fontWeight: semibold, color: putih)),
                     ),
-                    SizedBox(width: 20,),
+                    SizedBox(width: 10,),
                   ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(bmasuk),
